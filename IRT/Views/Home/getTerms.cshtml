@@ -1,0 +1,57 @@
+﻿@model IEnumerable<IRT.Models.Term>
+
+@{
+    ViewData["Title"] = "getResult";
+}
+
+<h1> R E S U L T </h1>
+
+<div class="row">
+
+    @if (Model != null)
+    {
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"> # </th>
+                    <th scope="col"> Term </th>
+                    <th scope="col"> Terms Posting List </th>
+                    <th scope="col"> TF </th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int i = 1;}
+                @foreach (var term in Model)
+                {
+                    
+                    var PostingList = "";
+                    <tr>
+                        <th scope="row">@i</th>
+                        <td>@term.id</td>
+                        @foreach (var doc in term.postingList)
+                        {
+                            PostingList = PostingList + " \"" + doc.id + "\" → ";
+                        }
+                        <td>@PostingList</td>
+                        <td>@term.termFrequency</td>
+                    </tr>
+                    i++;
+                }
+            </tbody>
+        </table>
+    }
+    else
+    {
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1> M O D E L → N U L L </h1>
+            </div>
+        </div>
+    }
+
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

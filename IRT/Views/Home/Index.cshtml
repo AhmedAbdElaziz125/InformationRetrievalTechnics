@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <form asp-action="getDocuments">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">DocumentCollection</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                   name="path" value="E:\FCAI-H\Level_4\Term_1\IR\Project\DocumentCollection">
+            <input type="submit" value="getDocuments" class="btn btn-outline-primary" />
+        </div>
+    </form>
+    <form asp-action="getTerms">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">DocumentCollection</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                    name="path" value="E:\FCAI-H\Level_4\Term_1\IR\Project\DocumentCollection">
+            <input type="submit" value="getTerms" class="btn btn-outline-primary" />
+        </div>
+    </form>
+
+</div>
