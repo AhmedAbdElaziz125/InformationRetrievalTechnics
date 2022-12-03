@@ -3,7 +3,7 @@
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
+    <h1 class="display-4"> I R T </h1>
     <form asp-action="getTerms">
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="input-group mb-3">
@@ -11,6 +11,15 @@
             <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
                    name="path" value="E:\FCAI-H\Level_4\Term_1\IR\Project\DocumentCollection">
             <input type="submit" value="getTerms" class="btn btn-outline-primary" />
+        </div>
+    </form>
+    <form asp-action="getDocuments">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">DocumentCollection</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                   name="path" value="E:\FCAI-H\Level_4\Term_1\IR\Project\DocumentCollection">
+            <input type="submit" value="get[TF+IDF]" class="btn btn-outline-danger" />
         </div>
     </form>
     <form asp-action="getDocuments">
@@ -28,8 +37,38 @@
             <span class="input-group-text" id="basic-addon3">DocumentCollection</span>
             <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
                    name="path" value="E:\FCAI-H\Level_4\Term_1\IR\Project\DocumentCollection">
+            <input type="submit" value="getw tf(1+ log tf)" class="btn btn-outline-danger" />
+        </div>
+    </form>
+    <form asp-action="getDocuments">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">DocumentCollection</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                   name="path" value="E:\FCAI-H\Level_4\Term_1\IR\Project\DocumentCollection">
+            <input type="submit" value="getNormalized[TF+IDF]" class="btn btn-outline-danger" />
+        </div>
+    </form>
+    <form asp-action="getTermDocumentIncidenceMatrices">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3">DocumentCollection</span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                   name="path" value="E:\FCAI-H\Level_4\Term_1\IR\Project\DocumentCollection">
             <input type="submit" value="getTermDocumentIncidenceMatrices" class="btn btn-outline-primary" />
         </div>
     </form>
-
+    <br />
+    <hr />
+    <h1 class="display-4"> Q U E R I E S </h1>
+    <br />
+    <form asp-action="getTermDocumentIncidenceMatrices">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="input-group mb-3">
+            <span class="input-group-text" id="basic-addon3"> Query </span>
+            <input type="text" class="form-control" id="basic-url" aria-describedby="basic-addon3"
+                   name="path" placeholder="brutus AND caeser NOT calpurnia">
+            <input type="submit" value="Execute" class="btn btn-outline-success" />
+        </div>
+    </form>
 </div>
