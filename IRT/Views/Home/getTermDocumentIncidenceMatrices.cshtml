@@ -1,0 +1,60 @@
+﻿@model IRT.Models.Matrix
+
+@{
+    ViewData["Title"] = "Term Document Incidence Matrices";
+}
+
+<h1 class="text-center"> R E S U L T  : Term Document Incidence Matrices </h1>
+
+<div class="row">
+
+    @if (Model != null)
+    {
+
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                    <th scope="col"> Term </th>
+                    <th scope="col">  </th>
+                    <th scope="col">  </th>
+                    @foreach(var doc in Model.Documents){
+                        <th scope="col">@doc.id</th>
+                    }
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var term in Model.Terms)
+                {
+                    <tr>
+                        <th scope="row">@term.id</th>
+                        <th> → </th>
+                        <th>  </th>
+                        @foreach (var doc in Model.Documents)
+                        {
+                            if(doc.documentTermsS.Contains(term.id)){
+                                <td class="text-center text-primary"> 1 </td>
+                            }else{
+                                <td class="text-center text-danger"> 0 </td>
+                            }
+                        }
+                    </tr>
+                }
+            </tbody>
+        </table>
+
+    }
+    else
+    {
+
+        <div class="row">
+            <div class="col-md-12">
+                <h1> M O D E L → N U L L </h1>
+            </div>
+        </div>
+    }
+
+</div>
+<div>
+    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
+    <a asp-action="Index">Back to List</a>
+</div>

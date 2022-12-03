@@ -5,5 +5,6 @@
         public string? id { get; set; }
         public int? termFrequency { get; set; } = 0;
         public List<Document> postingList { get; set; } = new List<Document>();
+        public List<string> termDocuments { get; set; } = new List<string>();
     }
 }
